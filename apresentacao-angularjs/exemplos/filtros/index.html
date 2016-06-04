@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="App">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Pessoas</title>
+  </head>  
+
+  <body>
+
+  <div ng-controller="AppCtrl">
+    <h1>{{frase | upper}}</h1>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script type="text/javascript">
+    
+  angular
+    .module('App', [])
+    .filter('upper', function(){
+      return function(input){
+        return input.toUpperCase();
+      }
+    })
+    .filter('lower', function(){
+      return function(input){
+        return input.toLowerCase();
+      }
+    })
+    .filter('case', function(){
+      return function(input, tipo){
+        if(tipo == 'upper'){
+          return input.toUpperCase();
+        }else if(tipo == 'lower'){
+          return input.toLowerCase();   
+        }else{
+          return input + ', deu treta!';
+        }
+        return input;
+      }
+    })
+    .controller('AppCtrl', ['$scope', function ($scope) {
+      $scope.frase = "Olá, meu nome é Oelton";
+    }]);
+
+  </script>
+  
+  </body>
+</html>
