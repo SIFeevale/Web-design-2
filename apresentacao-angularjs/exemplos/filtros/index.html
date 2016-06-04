@@ -8,7 +8,8 @@
   <body>
 
   <div ng-controller="AppCtrl">
-    <h1>{{frase | upper}}</h1>
+    <input type="text" ng-model="filtro" placeholder="Informe o filtros">
+    <h1>{{frase | case:filtro}}</h1>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -40,7 +41,8 @@
       }
     })
     .controller('AppCtrl', ['$scope', function ($scope) {
-      $scope.frase = "Olá, meu nome é Oelton";
+      $scope.filtro = '';
+      $scope.frase = "Baita exemplos de filtros";
     }]);
 
   </script>
