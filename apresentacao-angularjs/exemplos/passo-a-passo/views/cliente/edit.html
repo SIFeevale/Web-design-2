@@ -1,0 +1,38 @@
+
+<h3>Editar do cliente {{cliente.nome | upper}} </h3>
+<div class="jumbotron">
+    <form name="myform" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="nome">Nome:</label>
+            <div class="col-sm-5">
+                <input type="text" name="nome" id="nome" ng-model="cliente.nome" required="required" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="telefone">Telefone:</label>
+            <div class="col-sm-5">
+                <input type="text" name="telefone" id="telefone" ng-model="cliente.telefone" required="required" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="saldo">Saldo:</label>
+            <div class="col-sm-5">
+                <input type="number" name="saldo" id="saldo" ng-model="cliente.saldo" required="required" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="estado">Estado:</label>
+            <div class="col-sm-5">
+                <select name="estado" id="estado" ng-model="cliente.estado">
+                  <option ng-repeat="option in dataEstados.opcoes" value="{{option.uf}}">{{option.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a href="#/" class="btn btn-default">Voltar</a>
+            </div>
+        </div>
+    </form>
+</div>
+

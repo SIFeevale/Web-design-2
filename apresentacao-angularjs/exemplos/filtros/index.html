@@ -2,7 +2,7 @@
 <html ng-app="App">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Pessoas</title>
+    <title>Filtros</title>
   </head>  
 
   <body>
@@ -33,15 +33,16 @@
         if(tipo == 'upper'){
           return input.toUpperCase();
         }else if(tipo == 'lower'){
-          return input.toLowerCase();   
+          return input.toLowerCase(); 
+        }else if(tipo == 'tetra'){
+          return input + ', deu tetra';
         }else{
-          return input + ', deu treta!';
+          return input + ', default!';
         }
         return input;
       }
     })
     .controller('AppCtrl', ['$scope', function ($scope) {
-      $scope.filtro = '';
       $scope.frase = "Baita exemplos de filtros";
     }]);
 
